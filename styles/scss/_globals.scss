@@ -1,0 +1,22 @@
+//wrapper
+
+.wrapper {
+  max-width: 1080px;
+  margin:0 auto;
+}
+
+
+//Font Sizes
+html {
+  @include fontSize(15);
+}
+
+//classes that hides things that need to be hidden.
+
+.hideNoFootprint {
+  display: none;
+}
+
+.hideYesFootprint {
+  visibility: hidden;
+}

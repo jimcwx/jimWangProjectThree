@@ -1,0 +1,8 @@
+header {
+  height: 80vh ;
+  div.wrapper {
+    height: 100%;
+    @include flexBothCenter;
+    flex-direction: column;
+  }
+}
