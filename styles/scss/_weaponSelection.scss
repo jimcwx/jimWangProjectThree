@@ -1,12 +1,15 @@
 .weaponSelection {
 
+  max-height: 600px;
   
-  
-
-  .wrapper ul {
-    @include flexHorCenter;
+  .wrapper {
     margin-bottom: 50px;
   }
+  
+  .wrapper ul {
+    @include flexHorCenter;
+  }
+  
 
   li {
     margin: 20px;
@@ -17,7 +20,7 @@
 
   li:hover,
   li:focus {
-    transform:scale(1.5);
+    transform:scale(1.2);
     cursor:pointer;
   }
 

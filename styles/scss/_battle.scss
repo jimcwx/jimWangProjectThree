@@ -1,0 +1,19 @@
+.battle {
+
+  
+
+  .wrapper {
+    margin-bottom: 50px;
+  }
+
+  .characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hero,
+  .monster {
+    width: 40%;
+  }
+}

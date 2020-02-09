@@ -286,6 +286,14 @@ header div.wrapper {
           flex-direction: column;
 }
 
+.weaponSelection {
+  max-height: 600px;
+}
+
+.weaponSelection .wrapper {
+  margin-bottom: 50px;
+}
+
 .weaponSelection .wrapper ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,7 +303,6 @@ header div.wrapper {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 50px;
 }
 
 .weaponSelection li {
@@ -309,11 +316,44 @@ header div.wrapper {
 
 .weaponSelection li:hover,
 .weaponSelection li:focus {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   cursor: pointer;
 }
 
 .weaponSelection .imgContainer {
   height: 100%;
+}
+
+.battle .wrapper {
+  margin-bottom: 50px;
+}
+
+.battle .characters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.battle .hero,
+.battle .monster {
+  width: 40%;
+}
+
+.endScreen .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }

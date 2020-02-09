@@ -24,18 +24,28 @@
                 <!-- Message to user to be appended -->
                 <h2 class="selectionMessage"></h2>
                 <!-- Message to user to be appended -->
+                <p>Weapons have a 1/3 chance to strike critically</p>
                 <ul>
-                    <li>
-                        <div class="imgContainer" id="axe">
+                    <li tabindex="0"  id="axe">
+                        <h3>Axe</h3>
+                        <p>Damage: 5</p>
+                        <p>Critical: 6</p>
+                        <div class="imgContainer">
                             <img src="./assets/axe.png" alt="An axe, freshly sharpened, ready to taste blood">
                         </div>
                     </li>
-                    <li>
-                        <div class="imgContainer" id="sword">
+                    <li tabindex="0"  id="sword">
+                        <h3>Sword</h3>
+                        <p>Damage: 4</p>
+                        <p>critical: 7</p>
+                        <div class="imgContainer">
                             <img src="./assets/sword.png" alt="Silver sword with a blue hilt, shiny, majestic">
                         </div>
                     </li>
-                    <li>
+                    <li tabindex="0"  id="bow">
+                        <h3>Bow</h3>
+                        <p>Damage: 3</p>
+                        <p>Critical: 8</p>
                         <div class="imgContainer">
                             <img src="./assets/bow.jpg" alt="A wooden bow, if you listen closely it's humming with killing intent">
                         </div>
@@ -43,6 +53,65 @@
                 </ul>
             </div>
         </section>
+
+        <section class="battle hideNoFootprint">
+            <div class="wrapper">
+                <!-- Message to user to be appended -->
+                <h2 class="selectionMessage"></h2>
+                <!-- Message to user to be appended -->
+                <form action="" class="attack">
+                    <input type="submit" value="Attack" class="attack" id="attack">
+                </form>
+
+                <div class="characters">
+                    <div class="hero">
+                        <!-- Name and health to be appended when the user gives input -->
+                        <h3></h3>
+                        <p>Health: <span></span></p>
+                        <div class="imgContainer">
+                            <img src="./assets/hero.jpg" alt="Our hero, looking fearless as ever">
+                        </div>
+                    </div>
+                    <div class="monster">
+                        <!-- Name and health to be appended when the user gives input -->
+                        <h3></h3>
+                        <p>Health: <span></span></p>
+                        <div class="imgContainer">
+                            <img src="./assets/monster.png" alt="A monster, it's hideous visage is just the tip of the iceberg to the amount of evil within">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="events">
+                    <p class="heroAttack"></p>
+                    <p class="monsterAttack"></p>
+                </div>
+
+                
+            </div>
+
+        </section>
+
+        <section class="victoryScreen hideNoFootprint endScreen">
+            <div class="wrapper">
+                <h1>You are Victorious!</h1>
+                <form action="" class="playAgain">
+                    <input type="submit" value="Play Again">
+                </form>
+
+            </div>
+        </section>
+
+        <section class="loserScreen hideNoFootprint endScreen">
+            <div class="wrapper">
+                <h1>You have been defeated, get luckier next time</h1>
+                <form action="" class="playAgain">
+                    <input type="submit" value="Play Again">
+                </form>
+
+            </div>
+        </section>
+
     </body>
 
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
