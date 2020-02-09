@@ -34,6 +34,8 @@ $(function() {
     }
   ];
 
+  
+
 
   //This is a search function where the parameters will be a nameKey(string) and myArray(array) where it searches through the objects inside myArray and returns the object where the value of the name property matches the nameKey.
   function search(nameKey, myArray) {
