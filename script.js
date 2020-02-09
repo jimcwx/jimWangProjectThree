@@ -10,7 +10,7 @@ $(function() {
     health: 100,
     name: "Donald",
     weapon: {
-      name: "teeth",
+      name: "dementia",
       damage: 2,
       critical: 5,
     }
@@ -125,17 +125,17 @@ $(function() {
     //the below code makes it so that whenever the random interger generates the interger 2, the critical property is used as the damage instead of the damage property. The overall resulting integers could only be either 0, 1, or 2 therefore the chance of hitting 2 is 1/3. I am also populating the p tags showing the damage events on the document.
     if (playerCriticalFactor === 2) {
       monsterDamageToTake = playerObject.weapon.critical;
-      $(".battle .events .heroAttack").text(`${playerObject.name} critically strikes ${monsterObject.name} for ${monsterDamageToTake} damage.`)
+      $(".battle .events .heroAttack").text(`${playerObject.name} critically strikes ${monsterObject.name} with their ${playerObject.weapon.name} for ${monsterDamageToTake} damage.`)
     } else {
       monsterDamageToTake = playerObject.weapon.damage;
-      $(".battle .events .heroAttack").text(`${playerObject.name} attacks ${monsterObject.name} for ${monsterDamageToTake} damage.`)
+      $(".battle .events .heroAttack").text(`${playerObject.name} attacks ${monsterObject.name} with their ${playerObject.weapon.name} for ${monsterDamageToTake} damage.`)
     }
     if (monsterCriticalFactor === 2) {
       playerDamageToTake = monsterObject.weapon.critical;
-      $(".battle .events .monsterAttack").text(`${monsterObject.name} critically strikes ${playerObject.name} for ${playerDamageToTake} damage.`)
+      $(".battle .events .monsterAttack").text(`${monsterObject.name} critically strikes ${playerObject.name} with their ${monsterObject.weapon.name} for ${playerDamageToTake} damage.`)
     } else {
       playerDamageToTake = monsterObject.weapon.damage;
-      $(".battle .events .monsterAttack").text(`${monsterObject.name} attacks ${playerObject.name} for ${playerDamageToTake} damage.`)
+      $(".battle .events .monsterAttack").text(`${monsterObject.name} attacks ${playerObject.name} with their ${monsterObject.weapon.name} for ${playerDamageToTake} damage.`)
     }
     
     //Below I will subtract the damage from the health for both battling objects and then update the health text on the document.
