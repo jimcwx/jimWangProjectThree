@@ -11,11 +11,26 @@ html {
   @include fontSize(15);
 }
 
+//Stripping Styles
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+ul li {
+  list-style-type: none;
+}
+
 //classes that hides things that need to be hidden.
 
 .hideNoFootprint {
   display: none;
 }
+
+
 
 .hideYesFootprint {
   visibility: hidden;

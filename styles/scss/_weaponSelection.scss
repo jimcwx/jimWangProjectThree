@@ -1,0 +1,28 @@
+.weaponSelection {
+
+  
+  
+
+  .wrapper ul {
+    @include flexHorCenter;
+    margin-bottom: 50px;
+  }
+
+  li {
+    margin: 20px;
+    width: calc(100% / 3 - 40px);
+    transform:scale(1);
+    transition: all 1s;
+  }
+
+  li:hover,
+  li:focus {
+    transform:scale(1.5);
+    cursor:pointer;
+  }
+
+  .imgContainer {
+    height: 100%;
+    
+  }
+}

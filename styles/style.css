@@ -246,6 +246,17 @@ html {
   font-size: 1.5rem;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  width: 100%;
+}
+
+ul li {
+  list-style-type: none;
+}
+
 .hideNoFootprint {
   display: none;
 }
@@ -273,4 +284,36 @@ header div.wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.weaponSelection .wrapper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.weaponSelection li {
+  margin: 20px;
+  width: calc(100% / 3 - 40px);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.weaponSelection li:hover,
+.weaponSelection li:focus {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  cursor: pointer;
+}
+
+.weaponSelection .imgContainer {
+  height: 100%;
 }
