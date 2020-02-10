@@ -10,8 +10,8 @@ $(function() {
     health: 100,
     name: "Donald",
     weapon: {
-      name: "dementia",
-      damage: 2,
+      name: "mean tweets",
+      damage: 3,
       critical: 5,
     }
   }
