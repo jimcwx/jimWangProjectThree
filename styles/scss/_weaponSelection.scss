@@ -1,9 +1,19 @@
 .weaponSelection {
-
+  
   max-height: 600px;
   
+
   .wrapper {
     margin-bottom: 50px;
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  li h3 {
+    font-family: 'Press Start 2P', cursive;
   }
   
   .wrapper ul {
@@ -16,6 +26,8 @@
     width: calc(100% / 3 - 40px);
     transform:scale(1);
     transition: all 1s;
+    @include flexVerCenter;
+    justify-content: center;
   }
 
   li:hover,

@@ -73,8 +73,12 @@ $(function() {
         Welcome ${player.name}, Please Select your weapon.
       `);
       
-      //This reveals the weaponSelection to the player
-      $(".weaponSelection").toggleClass("hideNoFootprint");
+      //This hides away the Initial name entering screen and reveals the weaponSelection to the player
+      $("header").fadeOut(1500, function() {
+        $(".weaponSelection").fadeIn(1500);
+      })
+      
+      
       //This scrolls to the bottom of the page
       $('html,body').animate({ scrollTop: 9999 }, 'slow');
 
@@ -109,8 +113,10 @@ $(function() {
       $(".battle .monster p span").text(`${monster.health}/100`);
       
       //Hiding away the weapon selection and brings forth the battle screen
-      $(".weaponSelection").toggleClass("hideNoFootprint");
-      $(".battle").toggleClass("hideNoFootprint");
+      $(".weaponSelection").fadeOut(1500, function() {
+        $(".battle").fadeIn(1500);
+      })
+      
       $('html,body').animate({ scrollTop: 9999 }, 'slow');
     }
 
@@ -143,14 +149,17 @@ $(function() {
     playerObject.health = playerObject.health - playerDamageToTake;
     $(".battle .hero p span").text(`${playerObject.health}/100`);
     $(".battle .monster p span").text(`${monsterObject.health}/100`);
-
+    
     //Below we go to the end game screen when either the playerObject or the monsterObject reaches 0 health
     if (playerObject.health <= 0) {
-      $(".battle").toggleClass("hideNoFootprint");
-      $(".endScreen.loserScreen").toggleClass("hideNoFootprint");
+      $(".battle").fadeOut(1500, function() {
+        $(".endScreen.loserScreen").fadeIn(1500)
+      });
+      
     } else if (monsterObject.health <= 0) {
-      $(".battle").toggleClass("hideNoFootprint");
-      $(".endScreen.victoryScreen").toggleClass("hideNoFootprint");
+      $(".battle").fadeOut(1500, function () {
+        $(".endScreen.victoryScreen").fadeIn(1500)
+      });
     }
 
   }

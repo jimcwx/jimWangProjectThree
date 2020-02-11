@@ -6,18 +6,26 @@
 }
 
 
-//Font Sizes
+//Font Styles
 html {
   @include fontSize(15);
+  font-family: 'Nunito', sans-serif;
 }
 
 h1 {
+  font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
+  text-align: center;
   text-shadow:0px 3px 0px #b2a98f,
               0px 14px 10px rgba(0,0,0,0.15),
               0px 24px 2px rgba(0,0,0,0.1),
               0px 24px 30px rgba(0,0,0,0.1);
 }
+
+p {
+  margin: 10px;
+}
+
 //Stripping Styles
 
 img {
@@ -31,7 +39,10 @@ ul li {
   list-style-type: none;
 }
 
-
+//background colors
+body {
+  background-color:$primaryBackgroundColor
+}
 
 
 //classes that hides things that need to be hidden.
@@ -42,15 +53,21 @@ ul li {
 
 
 
+
+
 .hideYesFootprint {
   visibility: hidden;
 }
 
 //audio
-audio {
-  position: sticky;
+.mediaPlayer{
+  position: absolute;
   top:0;
   right:0;
+}
+audio {
+  position: sticky;
+  
   -webkit-transition:all 0.5s linear;
   -moz-transition:all 0.5s linear;
   -o-transition:all 0.5s linear;
