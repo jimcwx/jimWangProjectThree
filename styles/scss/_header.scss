@@ -14,7 +14,7 @@ header {
 $primary: #11998e;
 $secondary: #38ef7d;
 $white: black;
-$gray: rgb(199, 97, 199);
+$gray: $accentTextColor;
 .form__group {
   position: relative;
   padding: 15px 0 0;

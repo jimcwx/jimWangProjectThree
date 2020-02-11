@@ -1,7 +1,7 @@
 $(function() {
   //Declaring Variables
   
-
+  // const Swal = require('sweetalert2');
   const player = {
     health: 100,
   };
@@ -98,27 +98,39 @@ $(function() {
     //adding the weapon object to the player object
     //name of the weapon the player picked
     const weaponName = $(this).attr("id");
-    const userConfirmation = confirm(`You are about to select the ${weaponName}, are you sure?`);
-    //Checking if the user is sure about their weapon choice to counter-act accidental clicks.
-    if (userConfirmation) {
-      //searching through the weapons array for the correct weapon to add to the player object
-      const playerWeapon = search(weaponName, weapons);
-      player.weapon = playerWeapon;
+    // const userConfirmation = confirm(`You are about to select the ${weaponName}, are you sure?`);
+    let userConfirmation;
 
-      //populating the text tags in the battle section of the document
-      $(".selectionMessage").text(`
+    //Using sweetAlert2 to deal with user confirming their weapon
+    Swal.fire({
+      icon: 'warning',
+      text: `You are about to choose ${weaponName}, are you sure?`,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: "d33",
+      confirmButtonText: "Yes",
+    }).then(function(result) {
+      if (result.value) {
+        //searching through the weapons array for the correct weapon to add to the player object
+        const playerWeapon = search(weaponName, weapons);
+        player.weapon = playerWeapon;
+
+        //populating the text tags in the battle section of the document
+        $(".selectionMessage").text(`
         Well then ${player.name}, with your ${player.weapon.name} in hand it's time to start the battle!!
       `);
-      $(".battle .hero p span").text(`${player.health}/100`);
-      $(".battle .monster p span").text(`${monster.health}/100`);
-      
-      //Hiding away the weapon selection and brings forth the battle screen
-      $(".weaponSelection").fadeOut(1500, function() {
-        $(".battle").fadeIn(1500);
-      })
-      
-      $('html,body').animate({ scrollTop: 9999 }, 'slow');
-    }
+        $(".battle .hero p span").text(`${player.health}`);
+        $(".battle .monster p span").text(`${monster.health}`);
+
+        //Hiding away the weapon selection and brings forth the battle screen
+        $(".weaponSelection").fadeOut(200, function () {
+          $(".battle").fadeIn(1500);
+        })
+
+        $('html,body').animate({ scrollTop: 9999 }, 'slow');
+        
+      }
+    })
 
 
   })
@@ -147,17 +159,17 @@ $(function() {
     //Below I will subtract the damage from the health for both battling objects and then update the health text on the document.
     monsterObject.health = monsterObject.health - monsterDamageToTake;
     playerObject.health = playerObject.health - playerDamageToTake;
-    $(".battle .hero p span").text(`${playerObject.health}/100`);
-    $(".battle .monster p span").text(`${monsterObject.health}/100`);
+    $(".battle .hero p span").text(`${playerObject.health}`);
+    $(".battle .monster p span").text(`${monsterObject.health}`);
     
     //Below we go to the end game screen when either the playerObject or the monsterObject reaches 0 health
     if (playerObject.health <= 0) {
-      $(".battle").fadeOut(1500, function() {
+      $(".battle").fadeOut(200, function() {
         $(".endScreen.loserScreen").fadeIn(1500)
       });
       
     } else if (monsterObject.health <= 0) {
-      $(".battle").fadeOut(1500, function () {
+      $(".battle").fadeOut(200, function () {
         $(".endScreen.victoryScreen").fadeIn(1500)
       });
     }

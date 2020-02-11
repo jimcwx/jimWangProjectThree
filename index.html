@@ -69,18 +69,19 @@
 
         <section class="battle hideNoFootprint">
             <div class="wrapper">
+                <h1>A Hero's Journey</h1>
                 <!-- Message to user to be appended -->
                 <h2 class="selectionMessage"></h2>
                 <!-- Message to user to be appended -->
                 <form action="" class="attack">
-                    <input type="submit" value="Attack" class="attack" id="attack">
+                    <input type="submit" value="Attack" class="attack button" id="attack">
                 </form>
 
                 <div class="characters">
                     <div class="hero">
                         <!-- Name and health to be appended when the user gives input -->
                         <h3></h3>
-                        <p>Health: <span></span></p>
+                        <p>Health: <span class="actualHealth"></span>/100</p>
                         <div class="imgContainer">
                             <img src="./assets/hero.jpg" alt="Our hero, looking fearless as ever">
                         </div>
@@ -88,7 +89,7 @@
                     <div class="monster">
                         <!-- Name and health to be appended when the user gives input -->
                         <h3></h3>
-                        <p>Health: <span></span></p>
+                        <p>Health: <span class="actualHealth"></span>/100</p>
                         <div class="imgContainer">
                             <img src="./assets/monster.png" alt="A monster, it's hideous visage is just the tip of the iceberg to the amount of evil within">
                         </div>
@@ -107,9 +108,10 @@
 
         <section class="victoryScreen hideNoFootprint endScreen">
             <div class="wrapper">
+                <h1>A Hero's Journey</h1>
                 <h1>You are Victorious!</h1>
                 <form action="" class="playAgain">
-                    <input type="submit" value="Play Again">
+                    <input type="submit" value="Play Again" class="button">
                 </form>
 
             </div>
@@ -117,17 +119,18 @@
 
         <section class="loserScreen hideNoFootprint endScreen">
             <div class="wrapper">
+                <h1>A Hero's Journey</h1>
                 <h1>You have been defeated, get luckier next time</h1>
                 <form action="" class="playAgain">
-                    <input type="submit" value="Play Again">
+                    <input type="submit" value="Play Again" class="button">
                 </form>
 
             </div>
         </section>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+        <script src="script.js"></script>
     </body>
-
-    <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
-    <script src="script.js"></script>
 </body>
 </html>

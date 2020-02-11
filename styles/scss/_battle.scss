@@ -1,6 +1,17 @@
 .battle {
 
-  
+  h3 {
+    font-family: 'Press Start 2P', cursive;
+    margin: 10px;
+  }
+
+  span.actualHealth {
+    color: $accentTextColor;
+  }
+
+  .events p {
+    color: $accentTextColor;
+  }
 
   .wrapper {
     margin-bottom: 50px;
