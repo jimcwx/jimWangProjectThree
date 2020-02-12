@@ -2,5 +2,8 @@
   .wrapper {
     @include flexVerCenter;
   }
+  h3 {
+    font-family: 'Press Start 2P', cursive;
+  }
 }
 

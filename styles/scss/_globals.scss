@@ -3,6 +3,7 @@
 .wrapper {
   max-width: 1080px;
   margin:0 auto;
+  min-width: 360px;
 }
 
 //Stripping some Default styles that are annoying
@@ -67,20 +68,22 @@ form.attack {
 }
 
 .button {
-  margin: 40px;
+  margin: 10px;
+  
   padding: 20px 40px;
-  border-radius: 5px;
-  border: none;
+  border-radius: 20px;
+  outline: none;
   background-color: #d8a499;
   transform: scale(1);
   transition: all 1s;
+  
 }
 
 .button:hover {
   transform: scale(1.25);
   background-color: #7294d4;
-  border: 2px solid black;
-  // animation: shake 0.5s ease infinite;
+  outline: 2px solid black;
+  
   animation: borderRainbow 0.5s ease infinite;
 }
 
