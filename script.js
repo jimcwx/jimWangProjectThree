@@ -1,6 +1,7 @@
 $(function() {
   //Declaring Variables
-  
+  let battleCounter = 0;
+
   // const Swal = require('sweetalert2');
   const player = {
     health: 100,
@@ -34,7 +35,26 @@ $(function() {
     }
   ];
 
-  
+  const weaponsToDrop = [
+    {
+      name: "halberd",
+      damage: 6,
+      critical: 8,
+      url: "./assets/halberd"
+    },
+    {
+      name: "crossbow",
+      damage: 5,
+      critical: 10,
+      url: "./assets/crossbow"
+    },
+    {
+      name: "katana",
+      damage: 4,
+      critical: 15,
+      url: "./assets/katana"
+    }
+  ]
 
 
   //This is a search function where the parameters will be a nameKey(string) and myArray(array) where it searches through the objects inside myArray and returns the object where the value of the name property matches the nameKey.

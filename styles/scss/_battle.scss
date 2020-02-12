@@ -7,10 +7,17 @@
 
   span.actualHealth {
     color: $accentTextColor;
+    
   }
 
-  .events p {
-    color: $secondaryTextColor;
+  
+
+  .events p.heroAttack {
+    color: forestgreen;
+  }
+
+  .events p.monsterAttack {
+    color: crimson;
   }
 
   .wrapper {

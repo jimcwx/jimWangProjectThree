@@ -239,7 +239,6 @@ html {
 .wrapper {
   max-width: 1080px;
   margin: 0 auto;
-  min-width: 360px;
 }
 
 ul {
@@ -276,7 +275,6 @@ ul li {
 
 body {
   background-color: #c6cdf7;
-  min-width: 350px;
 }
 
 .hideNoFootprint {
@@ -296,27 +294,34 @@ form.attack {
   margin: 10px;
   padding: 20px 40px;
   border-radius: 20px;
-  outline: none;
+  border: none;
   background-color: #d8a499;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: background-color 1s, -webkit-transform 1s;
+  transition: background-color 1s, -webkit-transform 1s;
+  transition: transform 1s, background-color 1s;
+  transition: transform 1s, background-color 1s, -webkit-transform 1s;
 }
 
-.button:hover {
+.button:hover,
+.button:focus {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
   background-color: #7294d4;
-  outline: 2px solid black;
+  border: 2px solid black;
+  margin: 8px;
   -webkit-animation: borderRainbow 0.5s ease infinite;
           animation: borderRainbow 0.5s ease infinite;
 }
 
 .button:active {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  background-color: #d8a499;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  background-color: red;
+  -webkit-transition: background-color 0;
+  transition: background-color 0;
+  color: white;
 }
 
 .hideYesFootprint {
@@ -325,7 +330,7 @@ form.attack {
 
 .mediaPlayer {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
 }
 
@@ -547,8 +552,12 @@ header body {
   color: #c761c7;
 }
 
-.battle .events p {
-  color: #243a63;
+.battle .events p.heroAttack {
+  color: forestgreen;
+}
+
+.battle .events p.monsterAttack {
+  color: crimson;
 }
 
 .battle .wrapper {
@@ -590,45 +599,45 @@ header body {
 
 @-webkit-keyframes borderRainbow {
   0% {
-    outline: 2px solid black;
+    border: 2px solid black;
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
   12% {
-    outline: 2px solid #8b00ff;
+    border: 2px solid #8b00ff;
   }
   24% {
-    outline: 2px solid #2e2b5f;
+    border: 2px solid #2e2b5f;
   }
   25% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
   36% {
-    outline: 2px solid #0000ff;
+    border: 2px solid #0000ff;
   }
   48% {
-    outline: 2px solid #00ff00;
+    border: 2px solid #00ff00;
   }
   50% {
     -webkit-transform: rotate(-15deg);
             transform: rotate(-15deg);
   }
   60% {
-    outline: 2px solid #ffff00;
+    border: 2px solid #ffff00;
   }
   72% {
-    outline: 2px solid #ff7f00;
+    border: 2px solid #ff7f00;
   }
   75% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
   84% {
-    outline: 2px solid #ff0000;
+    border: 2px solid #ff0000;
   }
   100% {
-    outline: 2px solid black;
+    border: 2px solid black;
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
@@ -636,45 +645,45 @@ header body {
 
 @keyframes borderRainbow {
   0% {
-    outline: 2px solid black;
+    border: 2px solid black;
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
   12% {
-    outline: 2px solid #8b00ff;
+    border: 2px solid #8b00ff;
   }
   24% {
-    outline: 2px solid #2e2b5f;
+    border: 2px solid #2e2b5f;
   }
   25% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
   36% {
-    outline: 2px solid #0000ff;
+    border: 2px solid #0000ff;
   }
   48% {
-    outline: 2px solid #00ff00;
+    border: 2px solid #00ff00;
   }
   50% {
     -webkit-transform: rotate(-15deg);
             transform: rotate(-15deg);
   }
   60% {
-    outline: 2px solid #ffff00;
+    border: 2px solid #ffff00;
   }
   72% {
-    outline: 2px solid #ff7f00;
+    border: 2px solid #ff7f00;
   }
   75% {
     -webkit-transform: rotate(15deg);
             transform: rotate(15deg);
   }
   84% {
-    outline: 2px solid #ff0000;
+    border: 2px solid #ff0000;
   }
   100% {
-    outline: 2px solid black;
+    border: 2px solid black;
     -webkit-transform: rotate(0);
             transform: rotate(0);
   }
@@ -683,6 +692,9 @@ header body {
 @media (max-width: 500px) {
   h1 {
     font-size: 2rem;
+  }
+  header .form__field:placeholder-shown ~ .form__label {
+    font-size: 0.7rem;
   }
 }
 
@@ -702,8 +714,5 @@ header body {
   .weaponSelection ul li {
     margin-left: 10px;
     margin-right: 10px;
-  }
-  label.form__label {
-    font-size: 0.7rem;
   }
 }
