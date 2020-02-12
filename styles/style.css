@@ -241,6 +241,10 @@ html {
   margin: 0 auto;
 }
 
+ul {
+  padding-left: 0px;
+}
+
 html {
   font-size: 15px;
   font-size: 1.5rem;
@@ -271,6 +275,7 @@ ul li {
 
 body {
   background-color: #c6cdf7;
+  min-width: 350px;
 }
 
 .hideNoFootprint {
@@ -287,6 +292,7 @@ form.attack {
 }
 
 .button {
+  margin: 40px;
   padding: 20px 40px;
   border-radius: 5px;
   border: none;
@@ -301,6 +307,9 @@ form.attack {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
   background-color: #7294d4;
+  border: 2px solid black;
+  -webkit-animation: borderRainbow 0.5s ease infinite;
+          animation: borderRainbow 0.5s ease infinite;
 }
 
 .button:active {
@@ -538,7 +547,7 @@ header body {
 }
 
 .battle .events p {
-  color: #c761c7;
+  color: #243a63;
 }
 
 .battle .wrapper {
@@ -572,4 +581,102 @@ header body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@-webkit-keyframes borderRainbow {
+  0% {
+    border: 2px solid black;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  12% {
+    border: 2px solid #8b00ff;
+  }
+  24% {
+    border: 2px solid #2e2b5f;
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  36% {
+    border: 2px solid #0000ff;
+  }
+  48% {
+    border: 2px solid #00ff00;
+  }
+  50% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    border: 2px solid #ffff00;
+  }
+  72% {
+    border: 2px solid #ff7f00;
+  }
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  84% {
+    border: 2px solid #ff0000;
+  }
+  100% {
+    border: 2px solid black;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes borderRainbow {
+  0% {
+    border: 2px solid black;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  12% {
+    border: 2px solid #8b00ff;
+  }
+  24% {
+    border: 2px solid #2e2b5f;
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  36% {
+    border: 2px solid #0000ff;
+  }
+  48% {
+    border: 2px solid #00ff00;
+  }
+  50% {
+    -webkit-transform: rotate(-15deg);
+            transform: rotate(-15deg);
+  }
+  60% {
+    border: 2px solid #ffff00;
+  }
+  72% {
+    border: 2px solid #ff7f00;
+  }
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  84% {
+    border: 2px solid #ff0000;
+  }
+  100% {
+    border: 2px solid black;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
 }

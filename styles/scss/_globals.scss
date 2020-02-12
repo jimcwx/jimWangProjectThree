@@ -5,6 +5,11 @@
   margin:0 auto;
 }
 
+//Stripping some Default styles that are annoying
+
+ul {
+  padding-left: 0px;
+}
 
 //Font Styles
 html {
@@ -45,6 +50,7 @@ ul li {
 //background colors
 body {
   background-color:$primaryBackgroundColor;
+  min-width: 350px;
 }
 
 
@@ -61,6 +67,7 @@ form.attack {
 }
 
 .button {
+  margin: 40px;
   padding: 20px 40px;
   border-radius: 5px;
   border: none;
@@ -72,6 +79,9 @@ form.attack {
 .button:hover {
   transform: scale(1.25);
   background-color: #7294d4;
+  border: 2px solid black;
+  // animation: shake 0.5s ease infinite;
+  animation: borderRainbow 0.5s ease infinite;
 }
 
 .button:active {
