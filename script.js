@@ -119,7 +119,7 @@ $(function() {
     //name of the weapon the player picked
     const weaponName = $(this).attr("id");
     // const userConfirmation = confirm(`You are about to select the ${weaponName}, are you sure?`);
-    let userConfirmation;
+    
 
     //Using sweetAlert2 to deal with user confirming their weapon
     Swal.fire({
