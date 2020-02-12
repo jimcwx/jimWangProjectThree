@@ -54,6 +54,13 @@
   header .form__field:placeholder-shown ~ .form__label {
     font-size: 0.7rem;
   }
+
+  .battle,
+  .weaponDrop {
+    h3 {
+      font-size: 0.6rem;
+    }
+  }
 }
 
 @media (max-width: 360px) {

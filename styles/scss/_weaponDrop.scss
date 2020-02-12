@@ -1,0 +1,38 @@
+.weaponDrop {
+  .wrapper {
+    @include flexVerCenter;
+    align-items:center;
+  }
+
+  ul {
+    @include flexHorCenter;
+    justify-content: space-between;
+  }
+
+  li {
+    margin: 20px;
+    width: calc(100% / 2 - 40px);
+    transform:scale(1);
+    transition: all 1s;
+    @include flexVerCenter;
+    justify-content: center;
+  }
+
+  li h3 {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  p {
+    color: $accentTextColor;
+  }
+
+  li:hover,
+  li:focus {
+    transform:scale(1.2);
+    cursor:pointer;
+  }
+
+  .imgContainer {
+    height: 100%;
+  }
+}

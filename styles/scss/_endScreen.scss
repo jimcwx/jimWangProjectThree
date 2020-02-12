@@ -1,9 +1,11 @@
 .endScreen {
   .wrapper {
     @include flexVerCenter;
+    align-items: center;
   }
   h3 {
     font-family: 'Press Start 2P', cursive;
+    text-align:center;
   }
 }
 

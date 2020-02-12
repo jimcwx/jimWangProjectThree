@@ -104,12 +104,12 @@ form.attack {
 //audio
 .mediaPlayer{
   position: absolute;
-  bottom:0;
-  right:0;
+  top:0;
+  left:0;
 }
 audio {
   position: sticky;
-  width: 100px;
+  width: 50px;
   -webkit-transition:all 0.5s linear;
   -moz-transition:all 0.5s linear;
   -o-transition:all 0.5s linear;

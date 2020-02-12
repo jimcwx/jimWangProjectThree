@@ -330,14 +330,14 @@ form.attack {
 
 .mediaPlayer {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0;
+  left: 0;
 }
 
 audio {
   position: -webkit-sticky;
   position: sticky;
-  width: 100px;
+  width: 50px;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
   -webkit-box-shadow: 2px 2px 4px 0px #006773;
@@ -591,7 +591,78 @@ header body {
 
 .battle .hero,
 .battle .monster {
-  width: 40%;
+  width: 45%;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
+}
+
+.weaponDrop .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  align-items: center;
+}
+
+.weaponDrop ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.weaponDrop li {
+  margin: 20px;
+  width: calc(100% / 2 - 40px);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.weaponDrop li h3 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.weaponDrop p {
+  color: #c761c7;
+}
+
+.weaponDrop li:hover,
+.weaponDrop li:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
+.weaponDrop .imgContainer {
+  height: 100%;
 }
 
 .endScreen .wrapper {
@@ -605,10 +676,12 @@ header body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
 }
 
 .endScreen h3 {
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 @-webkit-keyframes borderRainbow {
@@ -709,6 +782,10 @@ header body {
   }
   header .form__field:placeholder-shown ~ .form__label {
     font-size: 0.7rem;
+  }
+  .battle h3,
+  .weaponDrop h3 {
+    font-size: 0.6rem;
   }
 }
 

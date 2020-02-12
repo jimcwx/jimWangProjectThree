@@ -2,7 +2,7 @@ $(function() {
   //Declaring Variables
   let battleCounter = 0;
 
-  // const Swal = require('sweetalert2');
+  
   const player = {
     health: 100,
   };
@@ -12,9 +12,20 @@ $(function() {
     name: "Donald",
     weapon: {
       name: "mean tweets",
-      damage: 3,
-      critical: 5,
+      damage: 1,
+      critical: 3,
     }
+  }
+
+  const bossMonster = {
+    health: 100,
+    name: "Late-stage Capitalism",
+    weapon: {
+      name: "trickle down economy",
+      damage: 3,
+      critical: 5
+    },
+    url:"./assets/lateStageCapitalism.png"
   }
 
   const weapons = [
@@ -22,16 +33,22 @@ $(function() {
       name: "axe",
       damage: 5,
       critical: 6,
+      url: "./assets/axe.png",
+      alt: "An axe, freshly sharpened, ready to taste blood",
     },
     {
       name: "sword",
       damage: 4,
       critical: 7,
+      url:"./assets/sword.png",
+      alt: "Silver sword with a blue hilt, shiny, majestic",
     },
     {
       name: "bow",
       damage: 3,
       critical: 8,
+      url:"./assets/bow.png",
+      alt: "A wooden bow, if you listen closely it's humming with killing intent"
     }
   ];
 
@@ -40,19 +57,22 @@ $(function() {
       name: "halberd",
       damage: 6,
       critical: 8,
-      url: "./assets/halberd"
+      url: "./assets/halberd.png",
+      alt: "A shiny halberd, you feel stronger just by staring at it"
     },
     {
       name: "crossbow",
       damage: 5,
       critical: 10,
-      url: "./assets/crossbow"
+      url: "./assets/crossbow.png",
+      alt: "A finely tuned and calibrated crossbow, capable of killing from a long distance"
     },
     {
       name: "katana",
       damage: 4,
       critical: 15,
-      url: "./assets/katana"
+      url: "./assets/katana.png",
+      alt: "A curved, single edged blade with a long grip to accommodate two hands"
     }
   ]
 
@@ -112,15 +132,23 @@ $(function() {
       $(this).click();
     }
   });
+  $(".weaponDrop li").keydown(function (event) {
+    if (event.which === 13) {
+      $(this).click();
+    }
+  });
+
+  
+
+
 
   //A callback function that happens when a weapon is selected
   $(".weaponSelection li").on("click", function(){
     //adding the weapon object to the player object
     //name of the weapon the player picked
     const weaponName = $(this).attr("id");
-    // const userConfirmation = confirm(`You are about to select the ${weaponName}, are you sure?`);
     
-
+    
     //Using sweetAlert2 to deal with user confirming their weapon
     Swal.fire({
       icon: 'warning',
@@ -149,6 +177,69 @@ $(function() {
 
         $('html,body').animate({ scrollTop: 9999 }, 'slow');
         
+      }
+    })
+  });
+
+  //A callback function that happens when the player selects either the dropped weapon or keeps the original weapon.
+  $(".weaponDrop li").on("click", function() {
+    const weaponName = $(this).children("h3").text();
+    //Using sweetAlert2 to deal with user confirming their weapon
+    Swal.fire({
+      icon: 'warning',
+      text: `You are about to choose ${weaponName}, are you sure?`,
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: "d33",
+      confirmButtonText: "Yes",
+    }).then(function (result) {
+      if (result.value) {
+        //searching through the weapons array for the correct weapon to add to the player object
+
+        if (search(weaponName,weapons)) {
+          const playerWeapon = search(weaponName, weapons);
+          player.weapon = playerWeapon;
+  
+          //populating the text tags in the battle section of the document
+          $(".selectionMessage").text(`
+          Well then ${player.name}, with your ${player.weapon.name} in hand it's time to start the battle!!
+          `);
+          $(".battle .hero p span").text(`${player.health}`);
+          $(".battle .monster p span").text(`${bossMonster.health}`);
+  
+          //Hiding away the weapon selection and brings forth the battle screen
+          $(".weaponDrop").fadeOut(200, function () {
+            $(".battle").fadeIn(1500);
+          })
+  
+          $('html,body').animate({ scrollTop: 9999 }, 'slow');
+
+        } else {
+          const playerWeapon = search(weaponName, weaponsToDrop);
+          player.weapon = playerWeapon;
+          //populating the battle page
+          $(".selectionMessage").text(`
+          Well then ${player.name}, with your ${player.weapon.name} in hand it's time to start the battle!!
+          `);
+          $(".battle .hero p span").text(`${player.health}`);
+          $(".battle .monster p span").text(`${bossMonster.health}`);
+          $(".battle .monster h3").text(`${bossMonster.name}`);
+          $(".battle .monster img").attr("src", `${bossMonster.url}`);
+          $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
+          $(".battle .events .heroAttack").empty();
+          $(".battle .events .monsterAttack").empty();
+          //Hiding away the weapon selection and brings forth the battle screen
+          $(".weaponDrop").fadeOut(200, function () {
+            $(".battle").fadeIn(1500);
+          })
+
+          $('html,body').animate({ scrollTop: 9999 }, 'slow');
+        }
+
+
+
+        
+
       }
     })
 
@@ -182,33 +273,55 @@ $(function() {
     $(".battle .hero p span").text(`${playerObject.health}`);
     $(".battle .monster p span").text(`${monsterObject.health}`);
     
-    //Below we go to the end game screen when either the playerObject or the monsterObject reaches 0 health
+    //Below we go to the user fail screen if they reach 0 health, we go to the weapon drop screen if the battleCounter is less than 1, and we go to victory screen when the battleCounter is greater or equal to 1.
     if (playerObject.health <= 0) {
       $(".battle").fadeOut(200, function() {
         $(".endScreen.loserScreen").fadeIn(1500)
       });
       
-    } else if (monsterObject.health <= 0) {
+    } else if (monsterObject.health <= 0 && battleCounter >= 1) {
       $(".battle").fadeOut(200, function () {
         $(".endScreen.victoryScreen").fadeIn(1500)
       });
+    } else if (monsterObject.health <= 0 && battleCounter < 1) {
+
+      battleCounter++;
+
+      $(".battle").fadeOut(200, function () {
+        //Changing the picture on the battle page
+        $(".characters .monster .imgContainer img").attr("src", `${bossMonster.url}`);
+        //Randomizing which weapon to drop and then populating the weaponDrop page
+        const weaponDropId = getRandomInt(weaponsToDrop.length);
+        $(".weaponDrop .oldWeapon h3").text(`${player.weapon.name}`);
+        $(".weaponDrop .oldWeapon .damage").text(`${player.weapon.damage}`);
+        $(".weaponDrop .oldWeapon .critical").text(`${player.weapon.critical}`);
+        $(".weaponDrop .oldWeapon img").attr("src",`${player.weapon.url}`);
+        $(".weaponDrop .oldWeapon img").attr("alt", `${player.weapon.alt}`);
+        $(".weaponDrop .newWeapon h3").text(weaponsToDrop[weaponDropId].name);
+        $(".weaponDrop .newWeapon .damage").text(weaponsToDrop[weaponDropId].damage);
+        $(".weaponDrop .newWeapon .critical").text(weaponsToDrop[weaponDropId].critical);
+        $(".weaponDrop .newWeapon img").attr("src", `${weaponsToDrop[weaponDropId].url}`);
+        $(".weaponDrop .newWeapon img").attr("alt", `${weaponsToDrop[weaponDropId].alt}`);
+        $(".weaponDrop").fadeIn(1500);
+      })
     }
 
   }
 
-  
-  
   //When the user clicks or hits enter on the attack button, the player object will battle the monster object
   $("form.attack").on("submit", function(event) {
     event.preventDefault();
-    letsBattle(player, monster);
+    if (battleCounter < 1) {
+      letsBattle(player, monster);
+    } else {
+      letsBattle(player, bossMonster);
+    }
     $('html,body').animate({ scrollTop: 9999 }, 'slow');
-  })
+  });
   
   
   //When the user clicks play again the entire page will hard refresh
   $("form.playAgain").on("submit", function(event) {
     location.reload(true);
-  })
-
+  });
 })
