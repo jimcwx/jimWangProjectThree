@@ -916,6 +916,12 @@ header body {
   }
 }
 
+@media (max-width: 760px) {
+  .wrapper {
+    margin: 0 20px;
+  }
+}
+
 @media (max-width: 500px) {
   header .form__field:placeholder-shown ~ .form__label {
     font-size: 0.5rem;
@@ -927,9 +933,6 @@ header body {
 }
 
 @media (max-width: 360px) {
-  .wrapper {
-    margin: 0 20px;
-  }
   h1 {
     font-size: 1.5rem;
   }
@@ -946,5 +949,14 @@ header body {
   }
   .battle p {
     font-size: 0.6rem;
+  }
+  .battle .health {
+    height: 16px;
+  }
+  .battle .health .healthBar {
+    height: 14px;
+  }
+  .battle .health .healthBox {
+    height: 14px;
   }
 }
