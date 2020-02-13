@@ -27,6 +27,16 @@ $(function() {
         critical: 3,
       },
       url: "./assets/vlad.png"
+    },
+    {
+      name: "Boris",
+      health: 100,
+      weapon: {
+        name: "brexit",
+        damage: 1,
+        critical: 3,
+      },
+      url: "./assets/boris.png"
     }
 ]
 
@@ -88,6 +98,13 @@ $(function() {
       critical: 15,
       url: "./assets/katana.png",
       alt: "A curved, single edged blade with a long grip to accommodate two hands"
+    },
+    {
+      name: "ninja stars",
+      damage: 5,
+      critical: 12,
+      url: "./assets/ninjaStar.png",
+      alt: "A colorful ninja star, capable of damaging foes from afar"
     }
   ]
 
@@ -287,7 +304,7 @@ $(function() {
     if (playerObject.health <= 50) {
       $("body").addClass("lowHealth");
       $(".selectionMessage").text(`
-      Watchout ${player.name}, your health is getting low`);
+      Watch out ${player.name}, your health is getting low`);
       };
     if (playerObject.health <= 25) {
       $("body").removeClass("lowHealth").addClass("veryLowHealth");
