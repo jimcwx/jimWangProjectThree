@@ -2,8 +2,15 @@
 
   h3 {
     font-family: 'Press Start 2P', cursive;
-    margin: 30px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    font-size: 0.6rem;
   }
+
+  p{
+    font-size: 0.7rem;
+  }
+
+  
 
   span.actualHealth {
     color: $accentTextColor;

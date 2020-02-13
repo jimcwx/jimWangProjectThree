@@ -46,10 +46,10 @@
 
 //Media Queries
 
+
+
 @media (max-width: 500px) {
-  h1 {
-    font-size: 2rem;
-  }
+  
 
   header .form__field:placeholder-shown ~ .form__label {
     font-size: 0.7rem;

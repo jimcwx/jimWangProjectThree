@@ -127,14 +127,16 @@ $(function() {
   })
 
   //This runs the above callback function when enter key is hit instead of a mouse click
-  $(".weaponSelection li").keydown(function (event) {
+  $(".weaponSelection li").keyup(function (event) {
     if (event.which === 13) {
+      $(this).blur();
       $(this).click();
     }
   });
-  $(".weaponDrop li").keydown(function (event) {
+  $(".weaponDrop li").keyup(function (event) {
     if (event.which === 13) {
-      $(this).click();
+      $(this).blur();
+      $(this).click();    
     }
   });
 
@@ -147,6 +149,7 @@ $(function() {
     //adding the weapon object to the player object
     //name of the weapon the player picked
     const weaponName = $(this).attr("id");
+    $(this).blur();
     
     
     //Using sweetAlert2 to deal with user confirming their weapon
@@ -183,6 +186,8 @@ $(function() {
 
   //A callback function that happens when the player selects either the dropped weapon or keeps the original weapon.
   $(".weaponDrop li").on("click", function() {
+
+    $(this).blur();
     const weaponName = $(this).children("h3").text();
     //Using sweetAlert2 to deal with user confirming their weapon
     Swal.fire({
