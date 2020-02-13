@@ -17,13 +17,17 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    input.playerName {
+      text-align: center;
+    }
   }
 
 //Input text animation courtesy of Lucas Oliveria https://codepen.io/lucasyem/pen/ZEEYKdj
 $primary: #11998e;
 $secondary: #38ef7d;
 $white: black;
-$gray: $accentTextColor;
+$gray: aquamarine;
 .form__group {
   position: relative;
   padding: 15px 0 0;

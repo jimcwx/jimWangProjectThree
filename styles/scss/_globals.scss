@@ -58,8 +58,16 @@ ul li {
 
 //background colors
 body {
-  background-color:$primaryBackgroundColor;
-  
+  background:linear-gradient(270deg, #9f83b2, #bf764d);
+  background-size: 400% 400%;
+}
+
+.lowHealth {
+  animation: danger 4s ease infinite;
+}
+
+.veryLowHealth {
+  animation: danger 2s ease infinite;
 }
 
 

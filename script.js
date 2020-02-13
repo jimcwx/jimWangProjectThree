@@ -117,6 +117,14 @@ $(function() {
       $("header").fadeOut(1500, function() {
         $(".weaponSelection").fadeIn(1500);
       })
+    } else {
+      event.preventDefault();
+
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please enter your name"
+      })
     }
   })
 
@@ -250,14 +258,35 @@ $(function() {
     playerObject.health = playerObject.health - playerDamageToTake;
     $(".battle .hero p span").text(`${playerObject.health}`);
     $(".battle .monster p span").text(`${monsterObject.health}`);
+
+    //We will add background animation to indicate the player that their health is low or critically low
+
+    if (playerObject.health <= 50) {
+      $("body").addClass("lowHealth");
+      $(".selectionMessage").text(`
+      Watchout ${player.name}, your health is getting low`);
+      };
+    if (playerObject.health <= 25) {
+      $("body").removeClass("lowHealth").addClass("veryLowHealth");
+      $(".selectionMessage").text(`
+      ${player.name}, pray to Yog-sa-zoth because your health is dangerously low!`);
+    };
+
     
     //Below we go to the user fail screen if they reach 0 health, we go to the weapon drop screen if the battleCounter is less than 1, and we go to victory screen when the battleCounter is greater or equal to 1.
     if (playerObject.health <= 0) {
+      //removing the animated background
+      $("body").removeClass("lowHealth");
+      $("body").removeClass("veryLowHealth");
+      
       $(".battle").fadeOut(200, function() {
         $(".endScreen.loserScreen").fadeIn(1500)
       });
       
     } else if (monsterObject.health <= 0 && battleCounter >= 1) {
+      //removing the animated background
+      $("body").removeClass("lowHealth");
+      $("body").removeClass("veryLowHealth");
       $(".battle").fadeOut(200, function () {
         $(".endScreen.victoryScreen").fadeIn(1500)
       });

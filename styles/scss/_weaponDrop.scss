@@ -1,7 +1,9 @@
 .weaponDrop {
   .wrapper {
     @include flexVerCenter;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
   }
 
   ul {
@@ -30,6 +32,7 @@
 
   p {
     color: $accentTextColor;
+    text-align:center;
   }
 
   li:hover,

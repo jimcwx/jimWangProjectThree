@@ -280,7 +280,19 @@ ul li {
 }
 
 body {
-  background-color: #c6cdf7;
+  background: -webkit-gradient(linear, right top, left top, from(#9f83b2), to(#bf764d));
+  background: linear-gradient(270deg, #9f83b2, #bf764d);
+  background-size: 400% 400%;
+}
+
+.lowHealth {
+  -webkit-animation: danger 4s ease infinite;
+          animation: danger 4s ease infinite;
+}
+
+.veryLowHealth {
+  -webkit-animation: danger 2s ease infinite;
+          animation: danger 2s ease infinite;
 }
 
 .hideNoFootprint {
@@ -405,6 +417,10 @@ header form {
           align-items: center;
 }
 
+header form input.playerName {
+  text-align: center;
+}
+
 header .form__group {
   position: relative;
   padding: 15px 0 0;
@@ -416,7 +432,7 @@ header .form__field {
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 2px solid #c761c7;
+  border-bottom: 2px solid aquamarine;
   outline: 0;
   font-size: 1.3rem;
   color: black;
@@ -455,7 +471,7 @@ header .form__label {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 1rem;
-  color: #c761c7;
+  color: aquamarine;
 }
 
 header .form__field:focus {
@@ -507,6 +523,20 @@ header body {
 
 .weaponSelection .wrapper {
   margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
 }
 
 .weaponSelection h2,
@@ -515,7 +545,7 @@ header body {
 }
 
 .weaponSelection p {
-  color: #c761c7;
+  color: aquamarine;
 }
 
 .weaponSelection li h3 {
@@ -578,11 +608,11 @@ header body {
 }
 
 .battle span.actualHealth {
-  color: #c761c7;
+  color: aquamarine;
 }
 
 .battle .events p.heroAttack {
-  color: forestgreen;
+  color: aquamarine;
 }
 
 .battle .events p.monsterAttack {
@@ -591,6 +621,20 @@ header body {
 
 .battle .wrapper {
   margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 90vh;
 }
 
 .battle .characters {
@@ -622,7 +666,11 @@ header body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   align-items: center;
+  height: 90vh;
 }
 
 .weaponDrop ul {
@@ -672,7 +720,8 @@ header body {
 }
 
 .weaponDrop p {
-  color: #c761c7;
+  color: aquamarine;
+  text-align: center;
 }
 
 .weaponDrop li:hover,
@@ -697,7 +746,10 @@ header body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
 }
 
 .endScreen h3 {
@@ -797,9 +849,33 @@ header body {
   }
 }
 
+@-webkit-keyframes danger {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes danger {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @media (max-width: 500px) {
   header .form__field:placeholder-shown ~ .form__label {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
   .battle h3,
   .weaponDrop h3 {
@@ -812,7 +888,7 @@ header body {
     font-size: 1.5rem;
   }
   h3 {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
   h2,
   p {

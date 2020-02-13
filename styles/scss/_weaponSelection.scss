@@ -5,6 +5,9 @@
 
   .wrapper {
     margin-bottom: 50px;
+    @include flexVerCenter;
+    justify-content: center;
+    height: 100vh;
   }
 
   

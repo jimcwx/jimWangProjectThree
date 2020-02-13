@@ -1,7 +1,8 @@
 .endScreen {
   .wrapper {
     @include flexVerCenter;
-    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }
   h3 {
     font-family: 'Press Start 2P', cursive;

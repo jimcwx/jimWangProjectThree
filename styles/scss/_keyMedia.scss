@@ -41,7 +41,12 @@
     border: 2px solid black;
     transform:rotate(0);
   }
+}
 
+@keyframes danger {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 //Media Queries
@@ -52,7 +57,7 @@
   
 
   header .form__field:placeholder-shown ~ .form__label {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 
   .battle,
@@ -69,7 +74,7 @@
   }
 
   h3 {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
 
   

@@ -20,7 +20,7 @@
   
 
   .events p.heroAttack {
-    color: forestgreen;
+    color: $accentTextColor;
   }
 
   .events p.monsterAttack {
@@ -29,6 +29,9 @@
 
   .wrapper {
     margin-bottom: 50px;
+    @include flexVerCenter;
+    justify-content: center;
+    height: 90vh;
   }
 
   .characters {
