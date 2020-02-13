@@ -378,7 +378,7 @@ img {
 }
 
 header {
-  height: 80vh;
+  height: 90vh;
   /* reset input */
   /* demo */
 }
@@ -536,7 +536,7 @@ header body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .weaponSelection h2,
@@ -749,7 +749,7 @@ header body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 .endScreen h3 {

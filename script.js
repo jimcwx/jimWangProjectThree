@@ -274,7 +274,16 @@ $(function() {
 
     
     //Below we go to the user fail screen if they reach 0 health, we go to the weapon drop screen if the battleCounter is less than 1, and we go to victory screen when the battleCounter is greater or equal to 1.
-    if (playerObject.health <= 0) {
+
+    if (playerObject.health <=0 && monsterObject.health <=0) {
+      //removing the animated background
+      $("body").removeClass("lowHealth");
+      $("body").removeClass("veryLowHealth");
+
+      $(".battle").fadeOut(200, function () {
+        $(".endScreen.tieScreen").fadeIn(1500)
+      });
+    }else if (playerObject.health <= 0) {
       //removing the animated background
       $("body").removeClass("lowHealth");
       $("body").removeClass("veryLowHealth");

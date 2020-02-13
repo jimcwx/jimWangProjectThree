@@ -34,14 +34,10 @@ h2,
     font-size: 1rem;
   }
 
-
-
 p {
   margin: 10px;
   font-size: 1rem;
 }
-
-
 
 //Stripping Styles
 
@@ -69,7 +65,6 @@ body {
 .veryLowHealth {
   animation: danger 2s ease infinite;
 }
-
 
 //classes that hides things that need to be hidden.
 
@@ -112,7 +107,6 @@ form.attack {
   
 }
 
-
 .hideYesFootprint {
   visibility: hidden;
 }
@@ -142,11 +136,7 @@ audio {
 
 audio:hover, audio:focus, audio:active
 {
-  -webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
-  -moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
   box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
   transform: scale(1.05);
 }
 

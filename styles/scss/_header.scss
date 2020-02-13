@@ -1,5 +1,5 @@
 header {
-  height: 80vh ;
+  height: 90vh ;
   div.wrapper {
     height: 100%;
     @include flexBothCenter;
@@ -10,8 +10,6 @@ header {
     text-align: center;
     
   }
-
-  
 
   form{
     display: flex;
