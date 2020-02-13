@@ -37,7 +37,7 @@
                 <!-- Message to user to be appended -->
                 <h2 class="selectionMessage"></h2>
                 <!-- Message to user to be appended -->
-                <p>Weapons have a 1/3 chance to strike critically</p>
+                <p>Weapons have a 33% chance to more damage than normal.</p>
                 <ul>
                     <li tabindex="0"  id="axe">
                         <h3>Axe</h3>
@@ -80,7 +80,11 @@
                     <div class="hero">
                         <!-- Name and health to be appended when the user gives input -->
                         <h3></h3>
-                        <p>Health: <span class="actualHealth"></span>/100</p>
+                        <div class="health">
+                            <div class="health-box"></div>
+                            <div class="health-bar"></div>
+                            <p><span class="actualHealth"></span>/100</p>
+                        </div>
                         <div class="imgContainer">
                             <img src="./assets/hero.png" alt="Our hero, looking fearless as ever">
                         </div>
@@ -88,7 +92,11 @@
                     <div class="monster">
                         <!-- Name and health to be appended when the user gives input -->
                         <h3></h3>
-                        <p>Health: <span class="actualHealth"></span>/100</p>
+                        <div class="health">
+                            <div class="health-box"></div>
+                            <div class="health-bar"></div>
+                            <p><span class="actualHealth"></span>/100</p>
+                        </div>
                         <div class="imgContainer">
                             <img src="" alt="A monster, it's hideous visage is just the tip of the iceberg to the amount of evil within">
                         </div>

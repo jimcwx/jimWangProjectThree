@@ -146,7 +146,7 @@ $(function() {
   
       //This adds the line asking the player to pick their weapon;
       $(".selectionMessage").text(`
-        Welcome ${player.name}, Please Select your weapon.
+        Welcome ${player.name}, please select your weapon.
       `);
       
       //This hides away the Initial name entering screen and reveals the weaponSelection to the player
@@ -242,6 +242,8 @@ $(function() {
           $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
           $(".battle .events .heroAttack").text(" ");
           $(".battle .events .monsterAttack").text(" ");
+          $(".battle .monster .health-bar").css("width", `${bossMonster.health}%`);
+          $(".battle .monster .health-bar").css("background-color", "green");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -261,6 +263,8 @@ $(function() {
           $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
           $(".battle .events .heroAttack").text(" ");
           $(".battle .events .monsterAttack").text(" ");
+          $(".battle .monster .health-bar").css("width", `${bossMonster.health}%`);
+          $(".battle .monster .health-bar").css("background-color", "green");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -277,6 +281,8 @@ $(function() {
     const monsterCriticalFactor = getRandomInt(3);
     let playerDamageToTake;
     let monsterDamageToTake;
+    let maxHealth = 100;
+    
     //the below code makes it so that whenever the random interger generates the interger 2, the critical property is used as the damage instead of the damage property. The overall resulting integers could only be either 0, 1, or 2 therefore the chance of hitting 2 is 1/3. I am also populating the p tags showing the damage events on the document.
     if (playerCriticalFactor === 2) {
       monsterDamageToTake = playerObject.weapon.critical;
@@ -299,17 +305,30 @@ $(function() {
     $(".battle .hero p span").text(`${playerObject.health}`);
     $(".battle .monster p span").text(`${monsterObject.health}`);
 
+    //Changing the health bar
+    $(".battle .hero .health-bar").css("width", `${playerObject.health}%`);
+    $(".battle .monster .health-bar").css("width", `${monsterObject.health}%`);
+
     //We will add background animation to indicate the player that their health is low or critically low
 
     if (playerObject.health <= 50) {
       $("body").addClass("lowHealth");
       $(".selectionMessage").text(`
       Watch out ${player.name}, your health is getting low`);
+      $(".battle .hero .health-bar").css("background-color", "orange");
       };
     if (playerObject.health <= 25) {
       $("body").removeClass("lowHealth").addClass("veryLowHealth");
       $(".selectionMessage").text(`
       ${player.name}, pray to Yog-sa-zoth because your health is dangerously low!`);
+      $(".battle .hero .health-bar").css("background-color", "red");
+    };
+
+    if (monsterObject.health <= 50) {
+      $(".battle .monster .health-bar").css("background-color", "orange");
+    };
+    if (monsterObject.health <= 25) {
+      $(".battle .monster .health-bar").css("background-color", "red");
     };
 
     

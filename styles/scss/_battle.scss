@@ -18,14 +18,14 @@
     
   }
 
-  
-
   .events p.heroAttack {
     color: $accentTextColor;
+    text-align: center;
   }
 
   .events p.monsterAttack {
     color: crimson;
+    text-align: center;
   }
 
   .wrapper {
@@ -51,6 +51,39 @@
   }
   .monster img {
     box-shadow: 10px 10px 6px -6px #777;
+  }
+  
+  
+  .health{
+    background-color: #ccc;
+    height: 30px;
+    width: 100%;
+    margin: 0 auto;
+    border: solid 1px #aaa;
+    position: relative;
+    opacity:1;
+    p{
+      position: absolute;
+      z-index: 30;
+      margin: 0;
+    }
+  }
+
+
+  .health-box {
+    background-color: #ccc;
+    height: 28px;
+    width: inherit;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .health-bar {
+    background-color: #007f00;
+    width: inherit;
+    height: 28px;
+    position: absolute;
+    z-index: 20;
   }
 
 }
