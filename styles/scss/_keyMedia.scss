@@ -65,6 +65,10 @@
 }
 
 @media (max-width: 360px) {
+  .wrapper {
+    margin:0 20px;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
@@ -89,7 +93,7 @@
 
   .battle {
     p {
-      font-size: 0.5rem;
+      font-size: 0.6rem;
     }
   }
 

@@ -7,13 +7,18 @@
   }
 
   p{
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
+  h2 {
+    text-align: center;
+  }
   span.actualHealth {
     color: $accentTextColor;
     
   }
+
+  
 
   .events p.heroAttack {
     color: $accentTextColor;

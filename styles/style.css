@@ -479,9 +479,9 @@ header .form__field:focus {
   padding-top: 50px;
   font-weight: 700;
   border-width: 3px;
-  -o-border-image: linear-gradient(to right, #11998e, #38ef7d);
-     border-image: -webkit-gradient(linear, left top, right top, from(#11998e), to(#38ef7d));
-     border-image: linear-gradient(to right, #11998e, #38ef7d);
+  -o-border-image: linear-gradient(to right, #8ea7dd, #38ef7d);
+     border-image: -webkit-gradient(linear, left top, right top, from(#8ea7dd), to(#38ef7d));
+     border-image: linear-gradient(to right, #8ea7dd, #38ef7d);
   border-image-slice: 1;
 }
 
@@ -492,7 +492,7 @@ header .form__field:focus ~ .form__label {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   font-size: 1rem;
-  color: #11998e;
+  color: #8ea7dd;
   font-weight: 700;
 }
 
@@ -604,7 +604,11 @@ header body {
 }
 
 .battle p {
-  font-size: 0.7rem;
+  font-size: 1rem;
+}
+
+.battle h2 {
+  text-align: center;
 }
 
 .battle span.actualHealth {
@@ -892,6 +896,9 @@ header body {
 }
 
 @media (max-width: 360px) {
+  .wrapper {
+    margin: 0 20px;
+  }
   h1 {
     font-size: 1.5rem;
   }
@@ -907,6 +914,6 @@ header body {
     margin-right: 10px;
   }
   .battle p {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 }
