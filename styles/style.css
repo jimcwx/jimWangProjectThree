@@ -682,7 +682,7 @@ header body {
   margin: 0;
 }
 
-.battle .health-box {
+.battle .healthBox {
   background-color: #ccc;
   height: 28px;
   width: inherit;
@@ -690,7 +690,7 @@ header body {
   z-index: 10;
 }
 
-.battle .health-bar {
+.battle .healthBar {
   background-color: #007f00;
   width: inherit;
   height: 28px;

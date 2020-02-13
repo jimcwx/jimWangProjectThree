@@ -242,8 +242,8 @@ $(function() {
           $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
           $(".battle .events .heroAttack").text(" ");
           $(".battle .events .monsterAttack").text(" ");
-          $(".battle .monster .health-bar").css("width", `${bossMonster.health}%`);
-          $(".battle .monster .health-bar").css("background-color", "green");
+          $(".battle .monster .healthBar").css("width", `${bossMonster.health}%`);
+          $(".battle .monster .healthBar").css("background-color", "green");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -263,8 +263,8 @@ $(function() {
           $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
           $(".battle .events .heroAttack").text(" ");
           $(".battle .events .monsterAttack").text(" ");
-          $(".battle .monster .health-bar").css("width", `${bossMonster.health}%`);
-          $(".battle .monster .health-bar").css("background-color", "green");
+          $(".battle .monster .healthBar").css("width", `${bossMonster.health}%`);
+          $(".battle .monster .healthBar").css("background-color", "green");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -306,8 +306,8 @@ $(function() {
     $(".battle .monster p span").text(`${monsterObject.health}`);
 
     //Changing the health bar
-    $(".battle .hero .health-bar").css("width", `${playerObject.health}%`);
-    $(".battle .monster .health-bar").css("width", `${monsterObject.health}%`);
+    $(".battle .hero .healthBar").css("width", `${playerObject.health}%`);
+    $(".battle .monster .healthBar").css("width", `${monsterObject.health}%`);
 
     //We will add background animation to indicate the player that their health is low or critically low
 
@@ -315,20 +315,20 @@ $(function() {
       $("body").addClass("lowHealth");
       $(".selectionMessage").text(`
       Watch out ${player.name}, your health is getting low`);
-      $(".battle .hero .health-bar").css("background-color", "orange");
+      $(".battle .hero .healthBar").css("background-color", "orange");
       };
     if (playerObject.health <= 25) {
       $("body").removeClass("lowHealth").addClass("veryLowHealth");
       $(".selectionMessage").text(`
       ${player.name}, pray to Yog-sa-zoth because your health is dangerously low!`);
-      $(".battle .hero .health-bar").css("background-color", "red");
+      $(".battle .hero .healthBar").css("background-color", "red");
     };
 
     if (monsterObject.health <= 50) {
-      $(".battle .monster .health-bar").css("background-color", "orange");
+      $(".battle .monster .healthBar").css("background-color", "orange");
     };
     if (monsterObject.health <= 25) {
-      $(".battle .monster .health-bar").css("background-color", "red");
+      $(".battle .monster .healthBar").css("background-color", "red");
     };
 
     
