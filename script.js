@@ -7,15 +7,30 @@ $(function() {
     health: 100,
   };
 
-  const monster = {
-    health: 100,
-    name: "Donald",
-    weapon: {
-      name: "mean tweets",
-      damage: 1,
-      critical: 3,
+  const monsters = [
+    {
+      health: 100,
+      name: "Donald",
+      weapon: {
+        name: "mean tweets",
+        damage: 1,
+        critical: 3,
+    },
+      url:"./assets/donald.png"
+    },
+    {
+      health: 100,
+      name: "Vlad",
+      weapon: {
+        name: "polonium poison",
+        damage: 1,
+        critical: 3,
+      },
+      url: "./assets/vlad.png"
     }
-  }
+]
+
+  let monsterToFight;
 
   const bossMonster = {
     health: 100,
@@ -103,9 +118,13 @@ $(function() {
       //This hides the form where the user entered their player name
       $(this).toggleClass("hideYesFootprint");
 
-      //Populating text tags for the name and health on the battle screen
+      randomMonsterIndex = getRandomInt(monsters.length);
+      monsterToFight = monsters[randomMonsterIndex];
+
+      //Populating text and img tags for the name and health on the battle screen
       $(".battle .hero h3").text(`${player.name}`);
-      $(".battle .monster h3").text(`${monster.name}`);
+      $(".battle .monster h3").text(`${monsterToFight.name}`);
+      $(".battle .monster img").attr("src", `${monsterToFight.url}`);
 
   
       //This adds the line asking the player to pick their weapon;
@@ -165,7 +184,7 @@ $(function() {
         Well then ${player.name}, with your ${player.weapon.name} in hand it's time to start the battle!!
       `);
         $(".battle .hero p span").text(`${player.health}`);
-        $(".battle .monster p span").text(`${monster.health}`);
+        $(".battle .monster p span").text(`${monsterToFight.health}`);
 
         //Hiding away the weapon selection and brings forth the battle screen
         $(".weaponSelection").fadeOut(200, function () {
@@ -201,7 +220,11 @@ $(function() {
           `);
           $(".battle .hero p span").text(`${player.health}`);
           $(".battle .monster p span").text(`${bossMonster.health}`);
-  
+          $(".battle .monster h3").text(`${bossMonster.name}`);
+          $(".battle .monster img").attr("src", `${bossMonster.url}`);
+          $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
+          $(".battle .events .heroAttack").text(" ");
+          $(".battle .events .monsterAttack").text(" ");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -219,8 +242,8 @@ $(function() {
           $(".battle .monster h3").text(`${bossMonster.name}`);
           $(".battle .monster img").attr("src", `${bossMonster.url}`);
           $(".battle .monster img").attr("alt", `${bossMonster.alt}`);
-          $(".battle .events .heroAttack").empty();
-          $(".battle .events .monsterAttack").empty();
+          $(".battle .events .heroAttack").text(" ");
+          $(".battle .events .monsterAttack").text(" ");
           //Hiding away the weapon selection and brings forth the battle screen
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
@@ -326,7 +349,7 @@ $(function() {
   $("form.attack").on("submit", function(event) {
     event.preventDefault();
     if (battleCounter < 1) {
-      letsBattle(player, monster);
+      letsBattle(player, monsterToFight);
     } else {
       letsBattle(player, bossMonster);
     }
@@ -334,6 +357,7 @@ $(function() {
   
   //When the user clicks play again the entire page will hard refresh
   $("form.playAgain").on("submit", function(event) {
+    event.preventDefault();
     location.reload(true);
   });
 })

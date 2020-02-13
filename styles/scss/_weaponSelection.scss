@@ -7,7 +7,6 @@
     height: 90vh;
   }
 
-  
   h2,
   p {
     text-align: center;
@@ -26,7 +25,6 @@
     @include flexHorCenter;
   }
   
-
   li {
     margin: 20px;
     width: calc(100% / 3 - 40px);

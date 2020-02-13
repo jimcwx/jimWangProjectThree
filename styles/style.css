@@ -365,9 +365,9 @@ audio {
 
 audio:hover, audio:focus, audio:active {
   -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
   -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 img {
@@ -651,8 +651,16 @@ header body {
 .battle .hero,
 .battle .monster {
   width: 45%;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-          box-shadow: 0 10px 6px -6px #777;
+}
+
+.battle .hero img {
+  -webkit-box-shadow: -10px 10px 6px -6px #777;
+          box-shadow: -10px 10px 6px -6px #777;
+}
+
+.battle .monster img {
+  -webkit-box-shadow: 10px 10px 6px -6px #777;
+          box-shadow: 10px 10px 6px -6px #777;
 }
 
 .weaponDrop .wrapper {

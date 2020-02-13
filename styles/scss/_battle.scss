@@ -10,14 +10,10 @@
     font-size: 0.7rem;
   }
 
-  
-
   span.actualHealth {
     color: $accentTextColor;
     
   }
-
-  
 
   .events p.heroAttack {
     color: $accentTextColor;
@@ -43,7 +39,13 @@
   .hero,
   .monster {
     width: 45%;
-    box-shadow: 0 10px 6px -6px #777;
+  }
+
+  .hero img {
+    box-shadow: -10px 10px 6px -6px #777;
+  }
+  .monster img {
+    box-shadow: 10px 10px 6px -6px #777;
   }
 
 }
