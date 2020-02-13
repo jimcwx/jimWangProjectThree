@@ -352,6 +352,13 @@ audio:hover, audio:focus, audio:active {
   transform: scale(1.05);
 }
 
+img {
+  max-height: 350px;
+  max-width: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 header {
   height: 80vh;
   /* reset input */
