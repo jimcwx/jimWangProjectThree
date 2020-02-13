@@ -117,40 +117,26 @@ $(function() {
       $("header").fadeOut(1500, function() {
         $(".weaponSelection").fadeIn(1500);
       })
-      
-      
-      //This scrolls to the bottom of the page
-      $('html,body').animate({ scrollTop: 9999 }, 'slow');
-
     }
-
   })
 
   //This runs the above callback function when enter key is hit instead of a mouse click
   $(".weaponSelection li").keyup(function (event) {
     if (event.which === 13) {
-      $(this).blur();
       $(this).click();
     }
   });
   $(".weaponDrop li").keyup(function (event) {
     if (event.which === 13) {
-      $(this).blur();
       $(this).click();    
     }
   });
-
-  
-
-
 
   //A callback function that happens when a weapon is selected
   $(".weaponSelection li").on("click", function(){
     //adding the weapon object to the player object
     //name of the weapon the player picked
     const weaponName = $(this).attr("id");
-    $(this).blur();
-    
     
     //Using sweetAlert2 to deal with user confirming their weapon
     Swal.fire({
@@ -177,9 +163,6 @@ $(function() {
         $(".weaponSelection").fadeOut(200, function () {
           $(".battle").fadeIn(1500);
         })
-
-        $('html,body').animate({ scrollTop: 9999 }, 'slow');
-        
       }
     })
   });
@@ -187,7 +170,6 @@ $(function() {
   //A callback function that happens when the player selects either the dropped weapon or keeps the original weapon.
   $(".weaponDrop li").on("click", function() {
 
-    $(this).blur();
     const weaponName = $(this).children("h3").text();
     //Using sweetAlert2 to deal with user confirming their weapon
     Swal.fire({
@@ -216,8 +198,6 @@ $(function() {
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
           })
-  
-          $('html,body').animate({ scrollTop: 9999 }, 'slow');
 
         } else {
           const playerWeapon = search(weaponName, weaponsToDrop);
@@ -237,14 +217,7 @@ $(function() {
           $(".weaponDrop").fadeOut(200, function () {
             $(".battle").fadeIn(1500);
           })
-
-          $('html,body').animate({ scrollTop: 9999 }, 'slow');
         }
-
-
-
-        
-
       }
     })
 
@@ -310,9 +283,7 @@ $(function() {
         $(".weaponDrop").fadeIn(1500);
       })
     }
-
   }
-
   //When the user clicks or hits enter on the attack button, the player object will battle the monster object
   $("form.attack").on("submit", function(event) {
     event.preventDefault();
@@ -321,9 +292,7 @@ $(function() {
     } else {
       letsBattle(player, bossMonster);
     }
-    $('html,body').animate({ scrollTop: 9999 }, 'slow');
   });
-  
   
   //When the user clicks play again the entire page will hard refresh
   $("form.playAgain").on("submit", function(event) {
