@@ -284,8 +284,8 @@ ul li {
 }
 
 body {
-  background: -webkit-gradient(linear, right top, left top, from(#9f83b2), to(#bf764d));
-  background: linear-gradient(270deg, #9f83b2, #bf764d);
+  
+  background: rgb(49, 180, 212);
   background-size: 400% 400%;
 }
 
