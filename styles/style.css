@@ -90,15 +90,6 @@ sup {
   top: -.5em;
 }
 
-audio, video {
-  display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
 img {
   border-style: none;
   max-width: 100%;
@@ -356,23 +347,7 @@ form.attack {
   left: 0;
 }
 
-audio {
-  position: -webkit-sticky;
-  position: sticky;
-  width: 50px;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  -webkit-box-shadow: 2px 2px 4px 0px #006773;
-  box-shadow: 2px 2px 4px 0px #006773;
-  border-radius: 7px 7px 7px 7px;
-}
 
-audio:hover, audio:focus, audio:active {
-  -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
-          box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
 
 header {
   height: 90vh;
